@@ -1,0 +1,53 @@
+.Panel-GroupedList {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 7px;
+}
+
+.Panel-GroupedItem {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+    color: var(--TEXT_COLOR);
+}
+
+.Panel-GroupedSubItem {
+    background: var(--BLOCK_BLOCK_COLOR_LITE);
+    padding: 3px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.85em;
+    margin: 0px 10px;
+}
+
+.Panel-GroupedText {
+    font-size: 0.875rem;
+    color: var(--TITLE_COLOR);
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+}
+
+.Panel-GroupedValue {
+    font-size: 0.875rem;
+    color: var(--TEXT_COLOR);
+}
+
+.OverallProgressContainer {
+    background: var(--BLOCK_BLOCK_COLOR);
+    display: flex;
+    height: 10px;
+    width: auto;
+    border-radius: 4px;
+    overflow: hidden;
+    margin: 10px 10px 20px 5px;
+    position: relative;
+}
+
+.OverallProgressSegment {
+    height: 100%;
+    transition: width 0.5s ease, background-color 0.3s ease;
+    position: relative;
+}

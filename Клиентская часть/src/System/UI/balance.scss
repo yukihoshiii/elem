@@ -1,0 +1,271 @@
+.BalancePage {
+    max-width: 1100px;
+    width: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: flex-end;
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    
+    &.loaded {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    
+    .Balance-Container {
+        max-width: 500px;
+        width: 100%;
+        margin: 0;
+        padding: 0 0 0 5px;
+    }
+    
+    .animate-fadeIn {
+        opacity: 0;
+        transform: translateY(20px);
+        animation: fadeIn 0.5s ease forwards;
+    }
+    
+    @keyframes fadeIn {
+        0% {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    
+    @keyframes countUp {
+        0% {
+            transform: translateY(20px);
+            opacity: 0;
+        }
+        100% {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+    
+    .UI-Card {
+        background: var(--BLOCK_COLOR);
+        border-radius: var(--BR_BASE);
+        padding: 20px;
+        margin-bottom: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        box-shadow: var(--BLOCK_SHADOW);
+        position: relative;
+        overflow: hidden;
+
+        &.Balance-Card {
+            background: var(--BLOCK_COLOR);
+            color: var(--TEXT_COLOR);
+            padding: 40px 20px;
+            border-radius: var(--BR_BASE);
+            width: 100%;
+            border: 1px solid var(--BORDER_COLOR);
+
+            .Balance-Title {
+                font-size: 1em;
+                opacity: 0.8;
+                margin-bottom: 20px;
+                font-weight: 400;
+            }
+
+            .Balance-Amount {
+                font-size: 2.5em;
+                font-weight: 700;
+                margin-bottom: 20px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                animation: countUp 0.8s ease forwards;
+                
+                &.zero-balance {
+                    color: var(--DULL_COLOR);
+                }
+                
+                .UI-Eball {
+                    margin-right: 15px;
+                    font-size: 0.85em;
+                    width: 45px;
+                    height: 45px;
+                    background: #9674ca;
+                    color: white;
+                    border-radius: 50%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+            }
+
+            .Balance-Date {
+                font-size: 0.875em;
+                opacity: 0.7;
+                margin-top: 20px;
+            }
+        }
+    }
+
+    .Earning-Block {
+        background: var(--BLOCK_COLOR);
+        border-radius: var(--BR_BASE);
+        padding: 0;
+        margin-bottom: 20px;
+        width: 100%;
+        border: 1px solid var(--BORDER_COLOR);
+        overflow: hidden;
+        
+        .UI-BLOCK_HEADER {
+            padding: 16px 20px;
+            border-bottom: 1px solid var(--BORDER_COLOR);
+            
+            .UI-Block-Title {
+                font-size: 1em;
+                font-weight: 500;
+            }
+        }
+        
+        .UI-BLOCK_CONTENT {
+            padding: 15px 20px;
+        }
+        
+        .Earning-Item {
+            display: flex;
+            align-items: center;
+            padding: 16px;
+            margin: 8px 0;
+            border-radius: var(--BR_BASE);
+            transition: background 0.2s ease;
+            
+            &:hover {
+                background: var(--AIR_BLOCK_COLOR);
+            }
+            
+            .Earning-Icon {
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                background: var(--AIR_BLOCK_COLOR);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-right: 20px;
+                flex-shrink: 0;
+                
+                svg {
+                    width: 20px;
+                    height: 20px;
+                    fill: var(--ACCENT_COLOR);
+                }
+            }
+            
+            .Earning-Info {
+                flex-grow: 1;
+                
+                .Earning-Description {
+                    font-size: 0.9em;
+                    color: var(--TEXT_COLOR);
+                    margin-bottom: 8px;
+                    font-weight: 500;
+                }
+                
+                .Earning-Amount {
+                    font-size: 1em;
+                    font-weight: 600;
+                    color: var(--ACCENT_COLOR);
+                    display: flex;
+                    align-items: center;
+                    
+                    .UI-Eball {
+                        margin-right: 8px;
+                        font-weight: normal;
+                        font-size: 0.75em;
+                        width: 22px;
+                        height: 22px;
+                        background: #9674ca;
+                        color: white;
+                        border-radius: 50%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                    }
+                }
+            }
+        }
+        
+        .Earning-Note {
+            font-size: 0.875em;
+            color: var(--TEXT_COLOR);
+            opacity: 0.7;
+            padding: 16px 20px;
+            background: var(--BLOCK_COLOR);
+            border-top: 1px solid var(--BORDER_COLOR);
+            text-align: center;
+        }
+        
+        .Earning-Unlimited {
+            font-size: 0.875em;
+            font-weight: 600;
+            color: var(--TEXT_COLOR);
+            padding: 16px 20px;
+            background: var(--AIR_BLOCK_COLOR);
+            border-top: 1px solid var(--BORDER_COLOR);
+            text-align: center;
+        }
+        
+        .Earning-Time-Limit {
+            font-size: 0.875em;
+            color: #ff9800;
+            font-weight: 500;
+            padding: 16px 20px;
+            background: rgba(255, 152, 0, 0.05);
+            border-top: 1px solid var(--BORDER_COLOR);
+            text-align: center;
+        }
+        
+        .UI-B_HIGHLIGHT {
+            background: var(--ACCENT_BG_COLOR, rgba(var(--ACCENT_COLOR_RGB), 0.1));
+            color: var(--ACCENT_COLOR);
+        }
+        
+        .Info-Block {
+            padding: 20px;
+            border-top: 1px solid var(--BORDER_COLOR);
+            
+            .Info-Title {
+                font-size: 1em;
+                font-weight: 600;
+                color: var(--TEXT_COLOR);
+                margin-bottom: 15px;
+                text-align: center;
+            }
+            
+            .Info-Item {
+                position: relative;
+                font-size: 0.875em;
+                color: var(--TEXT_COLOR);
+                padding: 10px 0 10px 18px;
+                line-height: 1.4;
+                
+                &:before {
+                    content: "";
+                    position: absolute;
+                    left: 0;
+                    top: 16px;
+                    width: 8px;
+                    height: 8px;
+                    border-radius: 50%;
+                    background: var(--ACCENT_COLOR);
+                }
+                
+                &:not(:last-child) {
+                    margin-bottom: 10px;
+                }
+            }
+        }
+    }
+} 

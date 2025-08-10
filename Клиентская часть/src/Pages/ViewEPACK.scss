@@ -1,0 +1,121 @@
+// Стили для компонента ViewEPACK
+
+.EPACK-FileInput {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 5px;
+    text-align: left;
+
+    input[type="file"] {
+        display: none;
+    }
+
+    label {
+        background: var(--BTN_BACKGROUND);
+        color: var(--BTN_TEXT_COLOR);
+        padding: 8px 16px;
+        border-radius: var(--BR_BASE);
+        cursor: pointer;
+        margin-bottom: 0;
+        flex-shrink: 0;
+    }
+
+    .Text {
+        font-size: 0.9em;
+        opacity: 0.8;
+    }
+
+    &.dragging {
+        outline: 2px dashed var(--ACCENT_COLOR);
+        background-color: rgba(var(--ACCENT_COLOR_RGB), 0.05);
+        transition: all 0.2s ease;
+        border-radius: 15px;
+        transform: scale(1.01);
+        
+        &::after {
+            content: attr(data-text);
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: var(--ACCENT_COLOR);
+            font-size: 1.2em;
+            font-weight: bold;
+            pointer-events: none;
+            z-index: 2;
+            white-space: nowrap;
+        }
+        
+        input, label, .Text {
+            opacity: 0.5;
+        }
+    }
+}
+
+// EPACK-Post стили
+
+.EPACK-Post {
+    .TopBar {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 10px;
+
+        .Avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            overflow: hidden;
+            
+            img, .NonAvatar {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+            
+            .NonAvatar {
+                background: var(--ACCENT_COLOR);
+                color: #fff;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-weight: bold;
+            }
+        }
+        
+        .Name {
+            font-weight: bold;
+            margin-bottom: 3px;
+        }
+        
+        .Date {
+            font-size: 0.8em;
+            opacity: 0.7;
+        }
+    }
+    
+    .Text {
+        margin-bottom: 15px;
+        white-space: pre-wrap;
+    }
+    
+    .Interaction {
+        display: flex;
+        gap: 15px;
+        margin-top: 10px;
+        
+        .InteractionCount {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            
+            svg {
+                width: 18px;
+                height: 18px;
+            }
+        }
+    }
+} 

@@ -1,0 +1,36 @@
+{
+    "cSpell.words": [
+        "Amoled",
+        "deepdawn",
+        "Dexie",
+        "Eball",
+        "eballs",
+        "elemsocial",
+        "EPACK",
+        "flac",
+        "hcaptcha",
+        "kkonnect",
+        "languagedetector",
+        "ldrs",
+        "Lotte",
+        "msgpack",
+        "Neoimage",
+        "PUSTOTA",
+        "sitekey",
+        "Tелеграмм",
+        "userdata",
+        "wselem",
+        "xaromie",
+        "дизлайков",
+        "инпут",
+        "Капча",
+        "лайков",
+        "Хароми",
+        "энтер"
+    ],
+    "files.associations": {
+        "*.embeddedhtml": "html",
+        "vector": "cpp"
+    },
+    "i18n-ally.localesPaths": []
+}
